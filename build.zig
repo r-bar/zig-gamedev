@@ -77,7 +77,7 @@ pub fn build(b: *std.Build) void {
     }
 }
 
-fn packagesCrossPlatform(b: *std.Build, options: Options) void {
+pub fn packagesCrossPlatform(b: *std.Build, options: Options) void {
     const target = options.target;
     const optimize = options.optimize;
 
@@ -108,7 +108,7 @@ fn packagesCrossPlatform(b: *std.Build, options: Options) void {
     zflecs_pkg = zflecs.package(b, target, optimize, .{});
 }
 
-fn packagesWindowsLinux(b: *std.Build, options: Options) void {
+pub fn packagesWindowsLinux(b: *std.Build, options: Options) void {
     const target = options.target;
     const optimize = options.optimize;
 
@@ -130,7 +130,7 @@ fn packagesWindowsLinux(b: *std.Build, options: Options) void {
     });
 }
 
-fn packagesWindows(b: *std.Build, options: Options) void {
+pub fn packagesWindows(b: *std.Build, options: Options) void {
     const target = options.target;
     const optimize = options.optimize;
 
